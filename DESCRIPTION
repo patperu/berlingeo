@@ -1,0 +1,25 @@
+Package: berlingeo
+Title: Spatial Data Files for Berlin (Germany)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Patrick",
+           family = "Hausmann",
+           role = c("aut", "cre"),
+           email = "patrick.hausmann@covimo.de")
+Description: This package contains spatial data files for various and administrative boundaries of Berlin, Germany.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+    glue,
+    httr (>= 1.2.0), 
+    stats,
+    utils,
+    sf
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: https://github.com/patperu/berlingeo
+BugReports: https://github.com/patperu/berlingeo/issues

@@ -1,0 +1,91 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "80%"
+)
+```
+# berlingeo
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This package contains spatial data files for various administrative boundaries in Berlin, Germany and currently one function `sf_fisbroker` to convert WKS files from the Berlin Geodata Portal [“FIS-Broker"](https://www.stadtentwicklung.berlin.de/geoinformation/fis-broker/) in sf objects. I was motivated by the package [nycgeo](https://github.com/mfherman/nycgeo) from Matt Herman.
+
+Data Source: Amt für Statistik Berlin-Brandenburg, Data Licence: Lizenz CC-BY-3.0
+
+## Installation
+
+Development version from GitHub
+
+```{r devel-install, eval = FALSE}
+remotes::install_github("patperu/berlingeo")
+library("berlingeo")
+```
+
+```{r}
+
+library(berlingeo)
+library(sf)
+library(tidyverse)
+
+```
+
+## LOR - Prognoseraum
+
+```{r}
+
+glimpse(lor_pgr_sf)
+
+ggplot(lor_pgr_sf) +
+  geom_sf() + 
+  theme_minimal()
+
+```
+
+## LOR - Bezirksregion
+
+```{r}
+
+glimpse(lor_bzr_sf)
+
+ggplot(lor_bzr_sf) +
+  geom_sf() + 
+  theme_minimal()
+
+```
+
+## LOR - Planungsraum
+
+```{r}
+
+glimpse(lor_plr_sf)
+
+ggplot(lor_plr_sf) +
+  geom_sf() + 
+  theme_minimal()
+
+```
+
+## Convert WKS dataset to a sf (simple features) object
+
+```{r}
+
+sf_fisbroker("s_erhaltgeb_es") %>%
+  ggplot() +
+    geom_sf() + 
+    theme_minimal()
+
+```
+
+Please note that the 'berlingeo' project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
+
